@@ -47,6 +47,17 @@ $hotels = [
         ],
 
     ];
+
+    // echo "<pre>" :
+    // var_dump {$hotels};
+    // echo "</pre>";
+
+    echo "<ul>";
+foreach ($hotels as $hotel) {
+    echo "li" . $hotel["name"] . " " . $hotel["description"] . " " . $hotel["parking"] . " " . $hotel["vote"] . " " . $hotel["distance_to_center"] . "</li>"
+}
+
+    echo "</ul>";
 ?>
 </body>
 </html>
