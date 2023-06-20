@@ -5,7 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
+
+<form action=""></form>
 
 <?php
 $hotels = [
@@ -54,7 +57,12 @@ $hotels = [
 
     echo "<ul>";
 foreach ($hotels as $hotel) {
-    echo "li" . $hotel["name"] . " " . $hotel["description"] . " " . $hotel["parking"] . " " . $hotel["vote"] . " " . $hotel["distance_to_center"] . "</li>"
+    echo "<li>" . $hotel["name"] .
+     " " . $hotel["description"] .
+      " " . $hotel["parking"] .
+       " " . $hotel["vote"] .
+        " " . $hotel["distance_to_center"] .
+         "</li>";
 }
 
     echo "</ul>";
