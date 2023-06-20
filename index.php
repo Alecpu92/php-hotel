@@ -6,7 +6,8 @@
     <title>Document</title>
 </head>
 <body>
-    
+
+<?php
 $hotels = [
 
         [
@@ -46,5 +47,6 @@ $hotels = [
         ],
 
     ];
+?>
 </body>
 </html>
