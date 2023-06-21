@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
     <title>Document</title>
 </head>
 
@@ -69,5 +68,37 @@ foreach ($hotels as $hotel) {
 
     echo "</ul>";
 ?>
+
+<table border="1px">
+        <tr>
+            <th>NAME</th>
+            <th>DESCRIPTION</th>
+            <th>PARKING</th>
+            <th>VOTE</th>
+            <th>DISTANCE TO CENTER</th>
+        </tr>
+
+        <?php
+
+            foreach ($hotels as $hotel) {
+
+                if (($parking === null  
+                    || ($parking === "yes" && $hotel['parking'])    // $hotel['parking'] === true
+                    || ($parking === "no" && !$hotel['parking']))
+                    && $vote <= $hotel['vote']) { // $hotel['parking'] === false
+
+                    echo '<tr>';
+                    echo '<td>' . $hotel['name'] . '</td>';
+                    echo '<td>' . $hotel['description'] . '</td>';
+                    echo '<td>' . ($hotel['parking'] ? "yes" : "no") . '</td>';
+                    echo '<td>' . $hotel['vote'] . '/5</td>';
+                    echo '<td>' . $hotel['distance_to_center'] . 'Km</td>';
+                    echo '</tr>';
+                }
+            }
+        ?>
+    </table>
+
+    
 </body>
 </html>
